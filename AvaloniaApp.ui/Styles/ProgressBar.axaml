@@ -1,0 +1,24 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<StackPanel Width="500" Height="200">
+			<ProgressBar Classes="DefaultProgressBar"/>
+
+			<ProgressBar/>
+
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<!-- Add Styles Here -->
+	<Style Selector="ProgressBar.DefaultProgressBar">
+		<Setter Property="VerticalAlignment"     Value="Stretch"/>
+		<Setter Property="HorizontalAlignment"   Value="Stretch"/>
+		<Setter Property="Foreground"			 Value="Red"/>
+		<Setter Property="FontSize"				 Value="18"/>
+		<Setter Property="CornerRadius"			 Value="8"/>
+		<Setter Property="Maximum"				 Value="100"/>
+		<Setter Property="ShowProgressText"		 Value="True"/>
+		<Setter Property="Margin"                Value="4"/>
+	</Style>
+
+</Styles>

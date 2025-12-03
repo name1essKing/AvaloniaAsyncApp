@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AvaloniaApp.Client.Views.AvaloniaApp"
+             xmlns:vm="using:AvaloniaApp.Client.Views"
+             x:Class="AvaloniaApp.Client.Views.AvaloniaAppView">
+    
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="*,*,*,*" 
+          ColumnDefinitions="*,*"
+          Margin="1">
+		<!--Кнопки запуска ProgressBar-->
+        <!--Каждая кнопка отвечает за свой ProgressBar,
+            находящийся справа-->
+       
+            <!-- VoidMethod - всегда доступна (синхронная) -->
+        <Button Grid.Row="0" Grid.Column="0"
+                Content="1. Void Method" 
+                Command="{Binding Commands.VoidMethod}"
+                Classes="DefaultButton"/>
+
+        <!-- FakeMethodAsync - всегда доступна -->
+        <Button Grid.Row="1" Grid.Column="0"
+                Content="2. Fake Async" 
+                Command="{Binding Commands.FakeMethodAsync}"
+                Classes="DefaultButton"/>
+
+        <!-- CpuBoundAsync - блокируется при выполнении -->
+        <Button Grid.Row="2" Grid.Column="0"
+                Content="3. CPU-bound Async" 
+                Command="{Binding Commands.CpuBoundAsync}"
+                IsEnabled="{Binding Commands.CpuBoundAsync.CanExecute}"
+                Classes="DefaultButton"/>
+
+        <!-- IoBoundAsync - блокируется при выполнении -->
+        <Button Grid.Row="3" Grid.Column="0"
+                Content="4. I/O-bound Async" 
+                Command="{Binding Commands.IoBoundAsync}"
+                IsEnabled="{Binding Commands.IoBoundAsync.CanExecute}"
+                Classes="DefaultButton"/>
+        <!--ProgressBar'ы-->
+        <ProgressBar Grid.Row="0" Grid.Column="1"
+                Value="{Binding Progress1}"
+                Classes="DefaultProgressBar">
+        </ProgressBar>
+
+        <ProgressBar Grid.Row="1" Grid.Column="1"
+                Value="{Binding Progress2}"
+                Classes="DefaultProgressBar">
+        </ProgressBar>
+
+        <ProgressBar Grid.Row="2" Grid.Column="1"
+                Value="{Binding Progress3}"
+                Classes="DefaultProgressBar">
+        </ProgressBar>
+        
+        <ProgressBar Grid.Row="3" Grid.Column="1"
+                Value="{Binding Progress4}"
+                Classes="DefaultProgressBar">
+        </ProgressBar>
+    </Grid>
+</UserControl>

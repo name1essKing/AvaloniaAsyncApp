@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:et="clr-namespace:AvaloniaApp.Client.Views"
+        Background="#1e1e1e"
+        mc:Ignorable="d" 
+        Width="600" Height="334"
+		MinWidth="600" MinHeight="332"
+        x:Class="AvaloniaApp.Client.Views.MainWindowView"
+        Title="AvaloniaApp.Client"
+        WindowStartupLocation="CenterOwner">
+
+	<Grid>
+		<et:AvaloniaAppView DataContext="{Binding AvaloniaAppViewModel}" />
+	</Grid>
+</Window>

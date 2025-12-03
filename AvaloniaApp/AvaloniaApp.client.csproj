@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<OutputType>WinExe</OutputType>
+		<AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+		<Platforms>AnyCPU</Platforms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>AvaloniaApp.Client</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="8.0.0" />
+		<PackageReference Include="Avalonia.ReactiveUI" Version="11.3.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AvaloniaApp.UI\AvaloniaApp.UI.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Views\AvaloniaApp\AvaloniaAppView.axaml.cs">
+			<DependentUpon>AvaloniaAppView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\AvaloniaApp\AvaloniaAppView.axaml.cs">
+			<DependentUpon>AvaloniaAppView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\MainWindowView.axaml.cs">
+			<DependentUpon>MainWindowView.axaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Services\" />
+	</ItemGroup>
+</Project>
