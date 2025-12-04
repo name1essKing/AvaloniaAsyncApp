@@ -31,14 +31,12 @@
         <Button Grid.Row="2" Grid.Column="0"
                 Content="3. CPU-bound Async" 
                 Command="{Binding Commands.CpuBoundAsync}"
-                IsEnabled="{Binding Commands.CpuBoundAsync.CanExecute}"
                 Classes="DefaultButton"/>
 
         <!-- IoBoundAsync - блокируется при выполнении -->
         <Button Grid.Row="3" Grid.Column="0"
                 Content="4. I/O-bound Async" 
                 Command="{Binding Commands.IoBoundAsync}"
-                IsEnabled="{Binding Commands.IoBoundAsync.CanExecute}"
                 Classes="DefaultButton"/>
         <!--ProgressBar'ы-->
         <ProgressBar Grid.Row="0" Grid.Column="1"
