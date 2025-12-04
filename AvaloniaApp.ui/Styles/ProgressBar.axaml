@@ -19,6 +19,7 @@
 		<Setter Property="Maximum"				 Value="100"/>
 		<Setter Property="ShowProgressText"		 Value="True"/>
 		<Setter Property="Margin"                Value="4"/>
+		<Setter Property="Background"			 Value="#333333"/>
 	</Style>
 
 </Styles>
