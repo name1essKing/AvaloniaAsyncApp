@@ -90,13 +90,15 @@ namespace AvaloniaApp.Client.Views.AvaloniaApp
             }
         }
         /// <summary>
-        /// CPU-BOUND АСИНХРОННАЯ ОПЕРАЦИЯ
-        /// Правильный способ выполнения тяжёлых вычислений
+        /// ДЕМОНСТРАЦИЯ: Фоновая задача с имитацией работы
         /// Task.Run() переносит работу в фоновый поток
-        /// UI поток остаётся свободным и отзывчивым
-        /// Thread.Sleep() в фоновом потоке не блокирует UI
+        /// Thread.Sleep() имитирует обработку
+        /// Dispatcher.UIThread.Post() безопасно обновляет UI из фона
+        /// 
+        /// Thread.Sleep() - это ожидание (I/O-bound), а не вычисления
+        /// Для настоящих CPU-bound операций используются вычисления вместо Sleep
         /// </summary>
-        public async Task CpuBoundAsync()
+        public async Task PseudoCpuBoundAsync()
         {
             Progress3 = 0;
 
@@ -104,7 +106,7 @@ namespace AvaloniaApp.Client.Views.AvaloniaApp
             {
                 for (int i = 0; i <= 100; i++)
                 {
-                    Thread.Sleep(30);
+                    Thread.Sleep(30);   // Имитация работы/ожидания
 
                     Dispatcher.UIThread.Post(() => Progress3 = i);
                 }

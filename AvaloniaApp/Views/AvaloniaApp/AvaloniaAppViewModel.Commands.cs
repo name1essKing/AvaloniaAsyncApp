@@ -12,7 +12,7 @@ namespace AvaloniaApp.Client.Views.AvaloniaApp
         {
             public AvaloniaAppViewModelCommands(AvaloniaAppViewModel vm)
             {
-                // VoidMethod - синхронный, не нужно IsExecuting, UI все-равно зависает
+                // VoidMethod - синхронный, UI все-равно зависает
                 VoidMethod = ReactiveCommand.Create(
                     () => vm.VoidMethod()
                 );
@@ -22,9 +22,9 @@ namespace AvaloniaApp.Client.Views.AvaloniaApp
                     () => vm.FakeMethodAsync()
                 );
 
-                // Асинхронные команды с IsExecuting
-                CpuBoundAsync = ReactiveCommand.CreateFromTask(
-                    async () => await vm.CpuBoundAsync()
+                // Асинхронные команды 
+                PseudoCpuBoundAsync = ReactiveCommand.CreateFromTask(
+                    async () => await vm.PseudoCpuBoundAsync()
                 );
 
                 IoBoundAsync = ReactiveCommand.CreateFromTask(
@@ -34,7 +34,7 @@ namespace AvaloniaApp.Client.Views.AvaloniaApp
 
             public ICommand VoidMethod { get; }
             public ICommand FakeMethodAsync { get; }
-            public ReactiveCommand<Unit, Unit> CpuBoundAsync { get; }
+            public ReactiveCommand<Unit, Unit> PseudoCpuBoundAsync { get; }
             public ReactiveCommand<Unit, Unit> IoBoundAsync { get; }
 
         }

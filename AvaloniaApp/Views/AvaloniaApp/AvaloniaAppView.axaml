@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+ï»¿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AvaloniaApp.Client.Views.AvaloniaApp"
              xmlns:vm="using:AvaloniaApp.Client.Views"
@@ -11,34 +11,34 @@
     <Grid RowDefinitions="*,*,*,*" 
           ColumnDefinitions="*,*"
           Margin="1">
-		<!--Êíîïêè çàïóñêà ProgressBar-->
-        <!--Êàæäàÿ êíîïêà îòâå÷àåò çà ñâîé ProgressBar,
-            íàõîäÿùèéñÿ ñïðàâà-->
+		<!--ÐšÐ½Ð¾Ð¿ÐºÐ¸ Ð·Ð°Ð¿ÑƒÑÐºÐ° ProgressBar-->
+        <!--ÐšÐ°Ð¶Ð´Ð°Ñ ÐºÐ½Ð¾Ð¿ÐºÐ° Ð¾Ñ‚Ð²ÐµÑ‡Ð°ÐµÑ‚ Ð·Ð° ÑÐ²Ð¾Ð¹ ProgressBar,
+            Ð½Ð°Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ÑÑ ÑÐ¿Ñ€Ð°Ð²Ð°-->
        
-            <!-- VoidMethod - âñåãäà äîñòóïíà (ñèíõðîííàÿ) -->
+            <!-- VoidMethod - Ð²ÑÐµÐ³Ð´Ð° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð° (ÑÐ¸Ð½Ñ…Ñ€Ð¾Ð½Ð½Ð°Ñ) -->
         <Button Grid.Row="0" Grid.Column="0"
                 Content="1. Void Method" 
                 Command="{Binding Commands.VoidMethod}"
                 Classes="DefaultButton"/>
 
-        <!-- FakeMethodAsync - âñåãäà äîñòóïíà -->
+        <!-- FakeMethodAsync - Ð²ÑÐµÐ³Ð´Ð° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð° -->
         <Button Grid.Row="1" Grid.Column="0"
                 Content="2. Fake Async" 
                 Command="{Binding Commands.FakeMethodAsync}"
                 Classes="DefaultButton"/>
 
-        <!-- CpuBoundAsync - áëîêèðóåòñÿ ïðè âûïîëíåíèè -->
+        <!-- CpuBoundAsync - Ð±Ð»Ð¾ÐºÐ¸Ñ€ÑƒÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ð¸ -->
         <Button Grid.Row="2" Grid.Column="0"
                 Content="3. CPU-bound Async" 
-                Command="{Binding Commands.CpuBoundAsync}"
+                Command="{Binding Commands.PseudoCpuBoundAsync}"
                 Classes="DefaultButton"/>
 
-        <!-- IoBoundAsync - áëîêèðóåòñÿ ïðè âûïîëíåíèè -->
+        <!-- IoBoundAsync - Ð±Ð»Ð¾ÐºÐ¸Ñ€ÑƒÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ð¸ -->
         <Button Grid.Row="3" Grid.Column="0"
                 Content="4. I/O-bound Async" 
                 Command="{Binding Commands.IoBoundAsync}"
                 Classes="DefaultButton"/>
-        <!--ProgressBar'û-->
+        <!--ProgressBar'Ñ‹-->
         <ProgressBar Grid.Row="0" Grid.Column="1"
                 Value="{Binding Progress1}"
                 Classes="DefaultProgressBar">
